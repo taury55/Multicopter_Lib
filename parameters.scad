@@ -1,5 +1,9 @@
-rotor_diameter = 250;
+
+
+
+
 arm_n = 6;
+rotor_diameter = 250;
 drone_diameter = (rotor_diameter/sin(180/arm_n));
 
 global_clearence = 0.1;
