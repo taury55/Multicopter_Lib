@@ -1,9 +1,10 @@
 rotor_diameter = 250;
-arm_pipe_diameter = 20;
-arm_pipe_inner_diameter = 18;
+arm_n = 6;
+drone_diameter = (rotor_diameter/sin(180/arm_n));
 
 M3_screw_diameter = 3;
 global_clearence = 0.1;
+
 
 // motor parameters ======================================
 motor_diameter = 40;
@@ -26,3 +27,20 @@ screws_offset_y = 5;
 holding_part_x = 30;
 upper_holding_part_height = 15;
 washer_size_x = 10;
+
+
+// avionics plate para. (666_1003) =======================
+avionics_plate_diameter = 200;
+avionics_plate_height = 3;
+
+av_screws_diameter = 160;
+av_cable_holes_offset = 70;
+av_cable_holes_width = 8;
+av_cable_holes_length = 20;
+
+
+
+
+arm_pipe_diameter = 20;
+arm_pipe_inner_diameter = 18;
+pipe_length = drone_diameter-motor_tube_x_offset;
