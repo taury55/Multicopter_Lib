@@ -24,20 +24,20 @@ module 666_1001_motor_plate(draft) {
         for (i = [45:90:315]) {
             rotate([0,0,i])
             translate([motor_screws_diameter/2,0,-1])
-            cylinder(motor_plate_height+2,d=M3_screw_diameter+global_clearence*2, $fn = draft ? 10 : 50);
+            cylinder(motor_plate_height+2,d=M3_screw_diameter, $fn = draft ? 10 : 50);
         }
         
         // screws to arm
         for (i = [0:screws_n-1]) {
             translate([motor_tube_x_offset+screws_offset_x+i*screws_gap,arm_pipe_diameter/2+screws_offset_y,-1])
-            cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter+global_clearence*2, $fn = draft ? 10 : 50);
+            cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter, $fn = draft ? 10 : 50);
             
             translate([motor_tube_x_offset+screws_offset_x+i*screws_gap,-arm_pipe_diameter/2-screws_offset_y,-1])
-            cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter+global_clearence*2, $fn = draft ? 10 : 50);
+            cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter, $fn = draft ? 10 : 50);
         }
         
         translate([motor_tube_x_offset+screws_offset_x,0,-1])
-        cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter+global_clearence*2, $fn = draft ? 10 : 50);
+        cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter, $fn = draft ? 10 : 50);
     }
 }
 
@@ -53,10 +53,10 @@ module 666_1001_arm_plate(draft) {
         // screws to arm
         for (i = [0:screws_n-1]) {
             translate([motor_tube_x_offset+screws_offset_x+i*screws_gap,arm_pipe_diameter/2+screws_offset_y,-1])
-            cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter+global_clearence*2, $fn = draft ? 10 : 50);
+            cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter, $fn = draft ? 10 : 50);
             
             translate([motor_tube_x_offset+screws_offset_x+i*screws_gap,-arm_pipe_diameter/2-screws_offset_y,-1])
-            cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter+global_clearence*2, $fn = draft ? 10 : 50);
+            cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter, $fn = draft ? 10 : 50);
         }
     }
 }
@@ -74,10 +74,30 @@ module 666_1001_arm_washer(draft) {
         
         // screws to arm
         translate([motor_tube_x_offset+screws_offset_x,0,-1])
-        cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter+global_clearence*2, $fn = draft ? 10 : 50);
+        cylinder(holding_part_x+motor_tube_x_offset+2,d=M3_screw_diameter, $fn = draft ? 10 : 50);
+        
+        translate([motor_tube_x_offset+screws_offset_x,0,motor_tube_z_offset+.1-M3_nut_height])
+        cylinder(M3_nut_height,d=M3_nut_diameter, $fn = 6);
     }
 }
+
+module 666_1001() {
+    
+    666_1001_motor_plate();
+    666_1001_arm_plate();
+    666_1001_arm_washer();
+
+}
+
+
 
 666_1001_motor_plate();
 666_1001_arm_plate();
 666_1001_arm_washer();
+
+
+
+
+
+
+
