@@ -61,7 +61,7 @@ module 666_1001_arm_plate(draft) {
     }
 }
 
-module 666_1001_arm_plate(draft) {
+module 666_1001_arm_washer(draft) {
     difference() {
         intersection() {
             translate([motor_tube_x_offset+screws_offset_x-washer_size_x/2,-motor_plate_diameter/2,0])
