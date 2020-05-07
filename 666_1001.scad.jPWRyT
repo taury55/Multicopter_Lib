@@ -1,8 +1,0 @@
-include <parameters.scad>;
-
-
-
-translate([holding_part_x-motor_plate_diameter/2,0,0])
-cube([holding_part_x-motor_plate_diameter/2, motor_plate_height+arm_pipe_diameter/2]);
-
-cylinder(h=5, d=motor_plate_diameter);
