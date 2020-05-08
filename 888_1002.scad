@@ -11,7 +11,7 @@ module 888_1002(draft) {
             } 
         }
         
-    translate([base_low_diameter/2-base_arm_screw_x_offset-base_arm_screw_x_offset,0,0])
+    translate([base_low_diameter/2-base_arm_screw_x_offset-arm_pipe_x_offset,0,0])
     cylinder(arm_pipe_diameter, d=M3_screw_diameter, $fn = draft ? 10 : 50);   
         
     translate([arm_pipe_length-screws_offset_x,0,0])

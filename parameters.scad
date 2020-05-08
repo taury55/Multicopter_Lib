@@ -15,8 +15,15 @@ M3_nut_height = 2.7;
 M3_nut_diameter = 6.6;
 M3_nut_pocket = 5.6;
 
+
+// Battery size ==========================================
+Battery_length = 195;
+Battery_height = 91;
+Battery_width = 64;
+
+
 // 3D printer para. ======================================
-print_plate_x = 220;
+print_plate_x = 200;
 print_plate_y = 220;
 
 
@@ -54,22 +61,44 @@ av_cable_holes_width = 8;
 av_cable_holes_length = 20;
 
 
-// main base para. (666_1004) ============================
-base_diameter = 200;
-base_height = 30;
-base_bottom_height = base_height/2;
-base_arm_screw_x_offset = 5;
-
-base_low_diameter = base_diameter/(2*tan(180/arm_n));
-base_arm_washer_width = 10;
+// mid poly base para. (666_1004) ========================
+mid_poly_diameter = 120;
+mid_poly_low_diameter = mid_poly_diameter*cos(180/arm_n);
+mid_poly_side = mid_poly_low_diameter*tan(180/arm_n);
 
 
 // arm pipe para. (888_1002) =============================
 arm_pipe_diameter = 20;
 arm_pipe_inner_diameter = 18;
-arm_pipe_x_offset = 0;
+arm_pipe_x_offset = mid_poly_low_diameter/2-.1;
 arm_pipe_z_offset = 5;
 arm_pipe_length = drone_diameter-motor_tube_x_offset-arm_pipe_x_offset;
+
+
+// main base para. (666_1004) ============================
+base_diameter = 300;
+base_height = 40;
+base_bottom_height = base_height/2;
+base_arm_screw_x_offset = 5;
+
+base_low_diameter = base_diameter*cos(180/arm_n);
+base_side = base_low_diameter*tan(180/arm_n);
+base_arm_washer_width = 10;
+base_middle_hole_diameter = 70;
+base_middle_screws_diameter = base_middle_hole_diameter+10;
+
+screws_x_offset_inside = 5;
+screws_x_offset_outside = 15;
+screws_y_offset = 2.5;
+screws_z_offset = (base_bottom_height-arm_pipe_diameter/2)/2;
+
+cutting_edge_width = 10;
+screws_joining_sides_diameter = base_diameter-50;
+
+
+// mid poly if base cant fit =============================
+base_can_fit = base_diameter <= min(print_plate_x,print_plate_y) ? true : false;
+
 
 
 

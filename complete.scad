@@ -30,4 +30,7 @@ for (i = [0:360/arm_n:360]) {
     666_1001();
 }
 
-//
+// battery
+rotate([0,0,90])
+translate([-Battery_length/2,-Battery_height/2,-Battery_width])
+cube([Battery_length,Battery_height,Battery_width]);
