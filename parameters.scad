@@ -17,9 +17,9 @@ M3_nut_pocket = 5.6;
 
 
 // Battery size ==========================================
-Battery_length = 195;
-Battery_height = 91;
-Battery_width = 64;
+battery_length = 195;
+battery_height = 91;
+battery_width = 64;
 
 
 // 3D printer para. ======================================
@@ -94,6 +94,29 @@ screws_z_offset = (base_bottom_height-arm_pipe_diameter/2)/2;
 
 cutting_edge_width = 10;
 screws_joining_sides_diameter = base_diameter-50;
+
+
+// battery module  para. (666_1005) =======================
+battery_cartridge_width = battery_height+6;
+battery_cartridge_height = battery_width+6;
+
+
+// battery module mechanism para. (666_1005) =======================
+locking_y_travel = 10;
+locking_ring_diameter = battery_width;
+locking_ring_height = 15;
+locking_ring_handle_offset = 20;
+locking_ring_handle_height = 10;
+locking_ring_handle_width = 15;
+locking_ring_hole_diameter = locking_ring_diameter-20;
+locking_ring_hole_depth = locking_ring_height/2-5;
+locking_slot_diameter = 10;
+locking_slot_height = 5;
+locking_slot_offset = 10;
+locking_teeth_cut_offset = 5;
+locking_teeth_height = 5;
+locking_teeth_slot_length = (battery_cartridge_width-locking_ring_diameter-2*locking_y_travel)/2;
+locking_teeth_offset = locking_ring_diameter/2-locking_slot_diameter-locking_y_travel-locking_slot_offset;
 
 
 // mid poly if base cant fit =============================

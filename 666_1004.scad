@@ -135,7 +135,7 @@ module 666_1004_bottom_sides(draft) {
 
 module 666_1004_bottom_mid(draft) {
     difference() {
-        cylinder(base_bottom_height-arm_pipe_diameter/2, d=mid_poly_diameter, $fn = arm_n);
+        cylinder(base_bottom_height/2, d=mid_poly_diameter, $fn = arm_n);
         
         // screw holes to sides
         for (i = [0:360/arm_n:360]) {
